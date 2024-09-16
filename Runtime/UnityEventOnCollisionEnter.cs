@@ -1,11 +1,9 @@
 using System.Linq;
 using UnityEngine;
-using UnityEngine.Events;
 
 
-public class UnityEventOnCollisionEnter : MonoBehaviour
+public class UnityEventOnCollisionEnter : AdditionalUnityEvent
 {
-    [SerializeField] private UnityEvent m_eventToFire;
     [SerializeField] private Collider[] m_excludeColliders;
 
 
@@ -16,6 +14,6 @@ public class UnityEventOnCollisionEnter : MonoBehaviour
             return;
         }
 
-        m_eventToFire.Invoke();
+        FireEvent();
     }
 }

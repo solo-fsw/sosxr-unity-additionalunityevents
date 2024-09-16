@@ -1,7 +1,5 @@
 using System.Linq;
 using JetBrains.Annotations;
-using SOSXR.EditorTools;
-using SOSXR.EnhancedLogger;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,7 +9,7 @@ public class UnityEventIfOnTriggerEnter : MonoBehaviour
 {
     [Header("Tag")]
     [SerializeField] private bool m_checkSpecificTag = true;
-    [TagSelector] [SerializeField] private string[] m_tagToCheckAgainst = {"FaceChooser"};
+    [SerializeField] private string[] m_tagToCheckAgainst = {"FaceChooser"};
 
     [Header("Events")]
     [SerializeField] [CanBeNull] private UnityEvent<Collider> m_eventToFire;
@@ -26,7 +24,7 @@ public class UnityEventIfOnTriggerEnter : MonoBehaviour
 
         FireEvent(other);
 
-        this.Success("Triggered UnityEvent on", gameObject.name);
+        Debug.Log("Triggered UnityEvent on " + gameObject.name);
     }
 
 

@@ -1,14 +1,10 @@
-using SOSXR.EditorTools;
-using SOSXR.EnhancedLogger;
 using UnityEngine;
-using UnityEngine.Events;
 
 
 [RequireComponent(typeof(Collider))]
-public class UnityEventIfTaggedCollidersOverlap : MonoBehaviour
+public class UnityEventIfTaggedCollidersOverlap : AdditionalUnityEvent
 {
-    [SerializeField] private UnityEvent m_eventToFire;
-    [TagSelector] [SerializeField] private string m_tagToCheckAgainst = "MainCamera";
+    [SerializeField] private string m_tagToCheckAgainst = "MainCamera";
     private Collider _thisCollider;
 
 
@@ -24,7 +20,7 @@ public class UnityEventIfTaggedCollidersOverlap : MonoBehaviour
 
         if (taggedGameObject == null)
         {
-            this.Error("No GameObject with tag " + m_tagToCheckAgainst + " found");
+            Debug.LogError("No GameObject with tag " + m_tagToCheckAgainst + " found");
 
             return;
         }
@@ -35,14 +31,5 @@ public class UnityEventIfTaggedCollidersOverlap : MonoBehaviour
         {
             FireEvent();
         }
-    }
-
-
-    [ContextMenu(nameof(FireEvent))]
-    private void FireEvent()
-    {
-        m_eventToFire.Invoke();
-
-        this.Info("Bounds Intersected, fired event");
     }
 }

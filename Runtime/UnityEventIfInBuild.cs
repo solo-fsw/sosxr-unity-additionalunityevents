@@ -1,16 +1,9 @@
-using UnityEngine;
-using UnityEngine.Events;
-
-
-public class UnityEventIfInBuild : MonoBehaviour
+public class UnityEventIfInBuild : AdditionalUnityEvent
 {
-    [SerializeField] private UnityEvent m_eventToFire;
-
-
     private void Awake()
     {
         #if !UNITY_EDITOR
-          m_eventToFire?.Invoke();
+            FireEvent();
         #endif
     }
 }
