@@ -1,10 +1,11 @@
 using UnityEngine;
 
+
 /// <summary>
-/// This uses non-rotating bounds.Intersects.
-/// This is faster, and does not rely on the Physics engine.
-/// However, it is less precise, since the bounding box doesn't strictly rotate along with the object.
-/// Instead, it shrinks and expands to keep the entire object within the bounds.
+///     This uses non-rotating bounds.Intersects.
+///     This is faster, and does not rely on the Physics engine.
+///     However, it is less precise, since the bounding box doesn't strictly rotate along with the object.
+///     Instead, it shrinks and expands to keep the entire object within the bounds.
 /// </summary>
 [RequireComponent(typeof(Collider))]
 public class UnityEventIfTaggedBoundsIntersect : AdditionalUnityEvent
@@ -47,9 +48,10 @@ public class UnityEventIfTaggedBoundsIntersect : AdditionalUnityEvent
         }
     }
 
-/// <summary>
-/// No need to run in FixedUpdate, since this is not a Physics calculation.
-/// </summary>
+
+    /// <summary>
+    ///     No need to run in FixedUpdate, since this is not a Physics calculation.
+    /// </summary>
     private void Update()
     {
         if (_taggedCollider == null)
