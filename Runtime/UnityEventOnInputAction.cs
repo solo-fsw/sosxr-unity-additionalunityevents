@@ -3,27 +3,30 @@ using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
 
 
-public class UnityEventOnInputAction : AdditionalUnityEvent
+namespace SOSXR.AdditionalUnityEvents
 {
-    [SerializeField] private InputActionProperty m_inputAction;
-
-
-    private void OnEnable()
+    public class UnityEventOnInputAction : AdditionalUnityEvent
     {
-        m_inputAction.action.Enable();
-        m_inputAction.action.performed += FireEvent;
-    }
+        [SerializeField] private InputActionProperty m_inputAction;
 
 
-    private void FireEvent(CallbackContext callbackContext)
-    {
-        FireEvent();
-    }
+        private void OnEnable()
+        {
+            m_inputAction.action.Enable();
+            m_inputAction.action.performed += FireEvent;
+        }
 
 
-    private void OnDisable()
-    {
-        m_inputAction.action.performed -= FireEvent;
-        m_inputAction.action.Disable();
+        private void FireEvent(CallbackContext callbackContext)
+        {
+            FireEvent();
+        }
+
+
+        private void OnDisable()
+        {
+            m_inputAction.action.performed -= FireEvent;
+            m_inputAction.action.Disable();
+        }
     }
 }

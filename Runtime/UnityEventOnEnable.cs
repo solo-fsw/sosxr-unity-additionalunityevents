@@ -1,7 +1,10 @@
-public class UnityEventOnEnable : AdditionalUnityEvent
+namespace SOSXR.AdditionalUnityEvents
 {
-    private void OnEnable()
+    public class UnityEventOnEnable : AdditionalUnityEvent
     {
-        FireEvent();
+        private void OnEnable()
+        {
+            FireEvent();
+        }
     }
 }

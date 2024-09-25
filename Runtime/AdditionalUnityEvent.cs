@@ -2,16 +2,19 @@ using UnityEngine;
 using UnityEngine.Events;
 
 
-public class AdditionalUnityEvent : MonoBehaviour
+namespace SOSXR.AdditionalUnityEvents
 {
-    [SerializeField] protected UnityEvent m_eventToFire;
-
-
-    [ContextMenu(nameof(FireEvent))]
-    protected void FireEvent()
+    public class AdditionalUnityEvent : MonoBehaviour
     {
-        m_eventToFire?.Invoke();
+        [SerializeField] protected UnityEvent m_eventToFire;
 
-        Debug.LogFormat("Fired event on {0}", gameObject.name);
+
+        [ContextMenu(nameof(FireEvent))]
+        protected void FireEvent()
+        {
+            m_eventToFire?.Invoke();
+
+            Debug.LogFormat("Fired event on {0}", gameObject.name);
+        }
     }
 }

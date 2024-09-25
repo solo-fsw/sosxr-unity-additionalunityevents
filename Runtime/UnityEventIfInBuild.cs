@@ -1,9 +1,12 @@
-public class UnityEventIfInBuild : AdditionalUnityEvent
+namespace SOSXR.AdditionalUnityEvents
 {
-    private void Awake()
+    public class UnityEventIfInBuild : AdditionalUnityEvent
     {
-        #if !UNITY_EDITOR
+        private void Awake()
+        {
+            #if !UNITY_EDITOR
             FireEvent();
-        #endif
+            #endif
+        }
     }
 }
