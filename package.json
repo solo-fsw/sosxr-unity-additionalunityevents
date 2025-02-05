@@ -13,6 +13,13 @@
     "UnityEvents",
     "Events"
   ],
+  "samples": [
+    {
+      "displayName": "Samples",
+      "description": "Contains samples for the Additional Unity Event Package",
+      "path": "Samples~/Samples"
+    }
+  ],
   "author": {
     "name": "SOSXR",
     "email": "sosxr@fsw.leidenuniv.nl",

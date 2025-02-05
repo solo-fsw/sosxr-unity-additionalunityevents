@@ -7,6 +7,7 @@ The changelog format is based on [Keep a Changelog](https://keepachangelog.com/e
 ### Added
 - Awake + Start
 
+
 ## [2.0.0] - 2025-02-03
 ### Changed
 - Changed from GNU GPL 3 license to MIT license
