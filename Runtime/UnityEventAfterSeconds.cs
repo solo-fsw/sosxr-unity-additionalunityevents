@@ -21,9 +21,9 @@ namespace SOSXR.AdditionalUnityEvents
         [ContextMenu(nameof(FireEventAfterDelay))]
         public void FireEventAfterDelay()
         {
-            Invoke(nameof(FireEvent), m_secondsToWaitAfterCalling);
-
             Debug.LogFormat("Will fire event after {0} seconds", m_secondsToWaitAfterCalling);
+
+            Invoke(nameof(FireEvent), m_secondsToWaitAfterCalling);
         }
     }
 }
